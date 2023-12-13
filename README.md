@@ -1,6 +1,6 @@
-# my_portfolio
+# Avinash's Portfolio
 
-A new Flutter project.
+My Personal Portfolio In Flutter.
 
 ## Getting Started
 
