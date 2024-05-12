@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/view/home_view/home_view.dart';
+import 'package:my_portfolio/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,11 +14,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      initialRoute: 'home',
+      routes: {
+        'home': (context) => const HomeScreen(),
+      },
       theme: ThemeData(
-        appBarTheme: AppBarTheme(color: Colors.blue),
         primaryColorLight: Colors.blue,
       ),
-      home: const HomeView(),
     );
   }
 }
