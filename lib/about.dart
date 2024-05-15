@@ -113,13 +113,15 @@ class _AboutScreenState extends State<AboutScreen> {
                   SizedBox(
                     width: 120,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'home');
+                      },
                       style: TextButton.styleFrom(
                         backgroundColor: Colors.white,
                         foregroundColor: Colors.black,
                       ),
                       child: Text(
-                        'Hire Me',
+                        'My Skill',
                         style: GoogleFonts.lato(),
                       ),
                     ),
@@ -128,7 +130,7 @@ class _AboutScreenState extends State<AboutScreen> {
                     height: 40,
                   ),
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
                         onPressed: () {},
@@ -141,14 +143,14 @@ class _AboutScreenState extends State<AboutScreen> {
                         onPressed: () {},
                         icon: FaIcon(
                           FontAwesomeIcons.facebook,
-                          color: Colors.blue,
+                          color: Colors.white,
                         ),
                       ),
                       IconButton(
                         onPressed: () {},
                         icon: const Icon(
                           RemixIcon.linkedin_box_fill,
-                          color: Colors.blue,
+                          color: Colors.white,
                         ),
                       ),
                       IconButton(
@@ -169,7 +171,14 @@ class _AboutScreenState extends State<AboutScreen> {
                         onPressed: () {},
                         icon: const Icon(
                           RemixIcon.youtube_fill,
-                          color: Colors.redAccent,
+                          color: Colors.white,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          FontAwesomeIcons.googlePlay,
+                          color: Colors.white,
                         ),
                       ),
                     ],
