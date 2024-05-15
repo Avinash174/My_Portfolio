@@ -124,7 +124,7 @@ class _AboutScreenState extends State<AboutScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   Row(
