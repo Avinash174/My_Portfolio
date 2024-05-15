@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:remix_flutter/remix_flutter.dart';
 import 'package:wtf_sliding_sheet/wtf_sliding_sheet.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -34,8 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
         Text(
           num,
           style: GoogleFonts.lato(
-            fontSize: 30,
+            fontSize: 22,
             fontWeight: FontWeight.bold,
+            foreground: Paint()..shader = OverallTextGradiant,
           ),
         ),
         Container(
@@ -43,6 +46,39 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Text(type),
         ),
       ],
+    );
+  }
+
+  mySpectialization(icon, text) {
+    return Container(
+      width: 105,
+      height: 115,
+      child: Card(
+        margin: EdgeInsets.all(0),
+        color: Color.fromARGB(255, 30, 31, 30),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                icon,
+                color: Colors.white,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                text,
+                style: GoogleFonts.lato(
+                  foreground: Paint()..shader = hightlightGradient,
+                  fontSize: 16,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 
@@ -135,11 +171,86 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        mySkill("10+", "Projets"),
-                        mySkill("10K", "Session"),
+                        mySkill("50+", "Projets"),
+                        mySkill("20+", "Certification"),
                         mySkill("10M", "Subscriber"),
                       ],
-                    )
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Specialized In',
+                      style: GoogleFonts.lato(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            mySpectialization(
+                              FontAwesomeIcons.android,
+                              "Android",
+                            ),
+                            mySpectialization(
+                              RemixIcon.java_fill,
+                              "Java",
+                            ),
+                            mySpectialization(
+                              RemixIcon.firebase_fill,
+                              "Firebase",
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            mySpectialization(
+                              FontAwesomeIcons.swift,
+                              "Swift",
+                            ),
+                            mySpectialization(
+                              FontAwesomeIcons.html5,
+                              "HTML",
+                            ),
+                            mySpectialization(
+                              RemixIcon.css3_fill,
+                              "CSS",
+                            ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            mySpectialization(
+                              RemixIcon.flutter_fill,
+                              "Flutter",
+                            ),
+                            mySpectialization(
+                              FontAwesomeIcons.php,
+                              "PHP",
+                            ),
+                            mySpectialization(
+                              FontAwesomeIcons.database,
+                              "MYSQL",
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               );
