@@ -111,7 +111,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             PopupMenuItem(
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, 'about_us');
+                },
                 child: Text(
                   'About',
                   style: GoogleFonts.lato(
@@ -148,13 +150,69 @@ class _HomeScreenState extends State<HomeScreen> {
               // the total available space that the sheet can expand to.
               positioning: SnapPositioning.relativeToAvailableSpace,
             ),
-            body: Center(
-              child: Text(
-                'data',
-                style: GoogleFonts.lato(
-                  fontSize: 30,
-                  color: Colors.blue,
-                ),
+            body: Container(
+              child: Stack(
+                children: [
+                  Container(
+                    margin: EdgeInsets.all(40),
+                    child: ShaderMask(
+                      shaderCallback: ((bounds) {
+                        return const LinearGradient(
+                            begin: Alignment.center,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.black,
+                              Colors.transparent,
+                            ]).createShader(
+                          Rect.fromLTRB(
+                            0,
+                            0,
+                            bounds.width,
+                            bounds.height,
+                          ),
+                        );
+                      }),
+                      blendMode: BlendMode.dst,
+                      child: Image.asset(
+                        'assets/images/img.jpg',
+                        height: 400,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * 0.49,
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Avinash Magar',
+                          style: GoogleFonts.lato(
+                            letterSpacing: 2,
+                            foreground: Paint()..shader = headerGradient,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 2,
+                        ),
+                        Text(
+                          'Mobile App Developer',
+                          style: GoogleFonts.lato(
+                            // wordSpacing: 10,
+                            letterSpacing: 5,
+                            foreground: Paint()..shader = hightlightGradient,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
             builder: (context, state) {
@@ -173,7 +231,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         mySkill("50+", "Projets"),
                         mySkill("20+", "Certification"),
-                        mySkill("10M", "Subscriber"),
                       ],
                     ),
                     const SizedBox(
@@ -200,8 +257,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               "Android",
                             ),
                             mySpectialization(
-                              RemixIcon.java_fill,
-                              "Java",
+                              RemixIcon.flutter_fill,
+                              "Flutter",
                             ),
                             mySpectialization(
                               RemixIcon.firebase_fill,
@@ -236,8 +293,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             mySpectialization(
-                              RemixIcon.flutter_fill,
-                              "Flutter",
+                              RemixIcon.java_fill,
+                              "Java",
                             ),
                             mySpectialization(
                               FontAwesomeIcons.php,

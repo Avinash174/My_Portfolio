@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/about.dart';
 import 'package:my_portfolio/home.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: 'home',
       routes: {
         'home': (context) => const HomeScreen(),
+        'about_us': (context) => const AboutScreen(),
       },
       theme: ThemeData(
         primaryColorLight: Colors.blue,
