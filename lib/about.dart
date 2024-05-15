@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:remix_flutter/remix_flutter.dart';
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
@@ -74,11 +76,21 @@ class _AboutScreenState extends State<AboutScreen> {
               child: Column(
                 children: [
                   Text(
+                    'Hello I Am ',
+                    style: GoogleFonts.lato(
+                      letterSpacing: 2,
+                      color: Colors.white,
+                      // foreground: Paint()..shader = headerGradient,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
                     'Avinash Magar',
                     style: GoogleFonts.lato(
                       letterSpacing: 2,
                       foreground: Paint()..shader = headerGradient,
-                      fontSize: 30,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -95,6 +107,73 @@ class _AboutScreenState extends State<AboutScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  SizedBox(
+                    width: 120,
+                    child: TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                      ),
+                      child: Text(
+                        'Hire Me',
+                        style: GoogleFonts.lato(),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          RemixIcon.instagram_fill,
+                          color: Colors.white,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: FaIcon(
+                          FontAwesomeIcons.facebook,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          RemixIcon.linkedin_box_fill,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          RemixIcon.github_fill,
+                          color: Colors.white,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          RemixIcon.twitter_x_fill,
+                          color: Colors.white,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          RemixIcon.youtube_fill,
+                          color: Colors.redAccent,
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
