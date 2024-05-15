@@ -14,10 +14,24 @@ class _HomeScreenState extends State<HomeScreen> {
     Color(0xff1f005c),
     Color(0xff5b0060),
     Color(0xff870160),
-    
     Color(0xfff39060),
     Color.fromARGB(255, 255, 89, 0)
   ]).createShader(Rect.fromLTWH(0, 0, 200.0, 70));
+
+  mysSkill(num, type) {
+    return Row(
+      children: [
+        Text(
+          num,
+          style: GoogleFonts.lato(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        )
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
